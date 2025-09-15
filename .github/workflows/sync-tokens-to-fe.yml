@@ -15,7 +15,6 @@ permissions:
 
 env:
   NODE_VERSION: "20"
-  DIST_DIR: "dist" # ← “변환 산출물”이 나오는 DS 쪽 폴더명
   FE_REPO: "find-my-item/FMI-FE" # ← 실제 owner/repo 로 교체
   FE_TARGET_DIR: "src/tokens/build" # ← FE에서 둘 위치
   PR_BRANCH: "chore/update-design-tokens"
@@ -59,11 +58,12 @@ jobs:
 
       - name: Verify output
         run: |
-          if [ -d "${{ env.DIST_DIR }}" ]; then
-            ls -la "${{ env.DIST_DIR }}"
+          if ls src/tokens/sd-*.json >/dev/null 2>&1; then
+            echo "Found generated sd-*.json in src/tokens:"
+            ls -la src/tokens/sd-*.json
           else
             echo "skip_pr=true" >> $GITHUB_ENV
-            echo "::warning::No ${{ env.DIST_DIR }} directory; skipping PR."
+            echo "::warning::No sd-*.json files in src/tokens; skipping PR."
           fi
 
       - name: Checkout FE
@@ -76,7 +76,7 @@ jobs:
       - name: Sync artifacts into FE
         run: |
           mkdir -p "fe/${{ env.FE_TARGET_DIR }}"
-          rsync -av --delete "${{ env.DIST_DIR }}/" "fe/${{ env.FE_TARGET_DIR }}/"
+          rsync -av --delete --include='sd-*.json' --exclude='*' "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
 
       - name: Git author
         working-directory: fe
