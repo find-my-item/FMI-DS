@@ -34,14 +34,36 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
 
-      - name: Install deps
-        run: npm ci
+      - name: Ensure rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: Install deps (if package.json exists)
+        if: hashFiles('package.json') != ''
+        run: |
+          if [ -f pnpm-lock.yaml ]; then
+            corepack enable
+            pnpm install --frozen-lockfile
+          elif [ -f yarn.lock ]; then
+            corepack enable
+            yarn install --frozen-lockfile
+          elif [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build tokens
-        run: npm run build:tokens # ← 네가 만든 변환 스크립트 이름
+        if: hashFiles('package.json') != ''
+        run: npm run build:tokens
 
       - name: Verify output
-        run: test -d "${{ env.DIST_DIR }}" && ls -la "${{ env.DIST_DIR }}"
+        run: |
+          if [ -d "${{ env.DIST_DIR }}" ]; then
+            ls -la "${{ env.DIST_DIR }}"
+          else
+            echo "skip_pr=true" >> $GITHUB_ENV
+            echo "::warning::No ${{ env.DIST_DIR }} directory; skipping PR."
+          fi
 
       - name: Checkout FE
         uses: actions/checkout@v4
@@ -84,6 +106,7 @@ jobs:
         if: env.skip_pr != 'true'
         uses: peter-evans/create-pull-request@v6
         with:
+          path: fe
           token: ${{ secrets.FE_REPO_TOKEN }}
           branch: ${{ env.PR_BRANCH }}
           base: main
