@@ -2,9 +2,10 @@ name: "DS → FE: Sync Design Tokens"
 
 on:
   push:
-    branches: [develop]
+    branches: [main]
     paths:
       - "tokens/**" # ← 토큰 소스 경로(필요시 수정)
+      - "src/tokens/**"
       - "style-dictionary/**" # ← 변환 설정/스크립트 경로(필요시 수정)
       - "package.json"
   workflow_dispatch:
