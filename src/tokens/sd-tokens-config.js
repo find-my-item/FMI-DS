@@ -5,6 +5,7 @@ register(StyleDictionary);
 
 const sd = new StyleDictionary({
   source: ["src/tokens/sd-*.json"], // figma에서 추출한 원상태의 토큰
+  log: { verbosity: 'verbose' }, // 누가 참조 깨졌는지까지 출력
   preprocessors: ["tokens-studio"],
   platforms: {
     css: {
