@@ -2,7 +2,7 @@ name: "DS → FE: Sync Design Tokens"
 
 on:
   push:
-    branches: [main]
+    branches: [develop]
     paths:
       - "tokens/**" # ← 토큰 소스 경로(필요시 수정)
       - "style-dictionary/**" # ← 변환 설정/스크립트 경로(필요시 수정)
@@ -109,7 +109,7 @@ jobs:
           path: fe
           token: ${{ secrets.FE_REPO_TOKEN }}
           branch: ${{ env.PR_BRANCH }}
-          base: main
+          base: develop
           title: "chore(tokens): sync from FMI-DS"
           body: |
             자동 동기화 — FMI-DS → FMI-FE
