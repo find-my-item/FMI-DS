@@ -1,0 +1,28 @@
+{
+  "name": "fmi-ds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "split:tokens": "node src/tokens/split-tokens.js",
+    "build:tokens:tailwind": "node src/tokens/sd-tokens-config.js && node src/tokens/tw-tokens-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/find-my-item/FMI-DS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/find-my-item/FMI-DS/issues"
+  },
+  "homepage": "https://github.com/find-my-item/FMI-DS#readme",
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.1",
+    "sd-tailwindcss-transformer": "^2.1.0",
+    "style-dictionary": "^5.0.4"
+  }
+}
