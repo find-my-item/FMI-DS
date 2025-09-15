@@ -1,0 +1,97 @@
+name: "DS → FE: Sync Design Tokens"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "tokens/**" # ← 토큰 소스 경로(필요시 수정)
+      - "style-dictionary/**" # ← 변환 설정/스크립트 경로(필요시 수정)
+      - "package.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: "20"
+  DIST_DIR: "dist" # ← “변환 산출물”이 나오는 DS 쪽 폴더명
+  FE_REPO: "find-my-item/FMI-FE" # ← 실제 owner/repo 로 교체
+  FE_TARGET_DIR: "src/tokens/build" # ← FE에서 둘 위치
+  PR_BRANCH: "chore/update-design-tokens"
+  COMMIT_MSG: "chore(tokens): sync from FMI-DS [skip ci]"
+
+jobs:
+  build-and-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout DS
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          path: fe
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build tokens
+        run: npm run build:tokens # ← 네가 만든 변환 스크립트 이름
+
+      - name: Verify output
+        run: test -d "${{ env.DIST_DIR }}" && ls -la "${{ env.DIST_DIR }}"
+
+      - name: Checkout FE
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.FE_REPO }}
+          token: ${{ secrets.FE_REPO_TOKEN }}
+          path: fe
+
+      - name: Sync artifacts into FE
+        run: |
+          mkdir -p "fe/${{ env.FE_TARGET_DIR }}"
+          rsync -av --delete "${{ env.DIST_DIR }}/" "fe/${{ env.FE_TARGET_DIR }}/"
+
+      - name: Git author
+        working-directory: fe
+        run: |
+          git config user.email "bot@users.noreply.github.com"
+          git config user.name  "design-bot"
+
+      - name: Create branch
+        working-directory: fe
+        run: git checkout -B "${{ env.PR_BRANCH }}"
+
+      - name: Commit if changed
+        working-directory: fe
+        run: |
+          if git status --porcelain | grep .; then
+            git add -A
+            git commit -m "${{ env.COMMIT_MSG }}"
+          else
+            echo "skip_pr=true" >> $GITHUB_ENV
+          fi
+
+      - name: Push branch
+        if: env.skip_pr != 'true'
+        working-directory: fe
+        run: git push --set-upstream origin "${{ env.PR_BRANCH }}" --force-with-lease
+
+      - name: Open PR
+        if: env.skip_pr != 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.FE_REPO_TOKEN }}
+          branch: ${{ env.PR_BRANCH }}
+          base: main
+          title: "chore(tokens): sync from FMI-DS"
+          body: |
+            자동 동기화 — FMI-DS → FMI-FE
+            - Style Dictionary 산출물 업데이트
+          labels: "design-tokens, automated"
+          signoff: true
+          delete-branch: false
