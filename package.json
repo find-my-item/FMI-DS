@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:tokens": "npm run split:tokens && npm run build:tokens:tailwind && node -e \"const fs=require('fs');const path=require('path');const src=path.join('src','tokens');const dst='dist';fs.rmSync(dst,{recursive:true,force:true});fs.mkdirSync(dst,{recursive:true});for (const f of fs.readdirSync(src)){if(f.startsWith('sd-')&&f.endsWith('.json')){fs.copyFileSync(path.join(src,f),path.join(dst,f));}}console.log('Collected sd-*.json to dist');\"",
+    "build:tokens": "npm run split:tokens && npm run build:tokens:tailwind",
     "split:tokens": "node src/tokens/split-tokens.js",
     "build:tokens:tailwind": "node src/tokens/sd-tokens-config.js && node src/tokens/tw-tokens-config.js"
   },
