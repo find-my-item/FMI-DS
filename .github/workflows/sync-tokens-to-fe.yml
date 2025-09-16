@@ -58,12 +58,12 @@ jobs:
 
       - name: Verify output
         run: |
-          if ls src/tokens/sd-*.json >/dev/null 2>&1; then
-            echo "Found generated sd-*.json in src/tokens:"
-            ls -la src/tokens/sd-*.json
+          if find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tw-*.json" \) | grep .; then
+            echo "Found token outputs (sd-*.json / tw-*.json):"
+            find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tw-*.json" \) -print
           else
             echo "skip_pr=true" >> $GITHUB_ENV
-            echo "::warning::No sd-*.json files in src/tokens; skipping PR."
+            echo "::warning::No sd-*.json or tw-*.json under src/tokens; skipping PR."
           fi
 
       - name: Checkout FE
@@ -76,9 +76,10 @@ jobs:
       - name: Sync artifacts into FE
         run: |
           mkdir -p "fe/${{ env.FE_TARGET_DIR }}"
-          rsync -av --delete \
+          rsync -avm --delete \
             --include='*/' \
             --include='**/sd-*.json' \
+            --include='**/tw-*.json' \
             --exclude='*' \
             "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
 
@@ -94,9 +95,10 @@ jobs:
           body: |
             자동 동기화 — FMI-DS → FMI-FE
             - Style Dictionary 산출물 업데이트
-          labels: "design-tokens, automated"
+          labels: "🥠 design-tokens, automated"
           commit-message: ${{ env.COMMIT_MSG }}
           signoff: true
           delete-branch: false
           add-paths: |
             ${{ env.FE_TARGET_DIR }}/sd-*.json
+            ${{ env.FE_TARGET_DIR }}/tw-*.json
