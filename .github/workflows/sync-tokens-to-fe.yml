@@ -97,7 +97,7 @@ jobs:
           body: |
             자동 동기화 — FMI-DS → FMI-FE
             - Style Dictionary 산출물 업데이트
-          labels: "🥠 design-tokens, automated"
+          labels: "🥠, automated"
           commit-message: ${{ env.COMMIT_MSG }}
           signoff: true
           delete-branch: false
