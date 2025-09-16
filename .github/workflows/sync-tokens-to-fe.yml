@@ -76,8 +76,7 @@ jobs:
       - name: Sync artifacts into FE
         run: |
           mkdir -p "fe/${{ env.FE_TARGET_DIR }}"
-          rsync -av --delete --include='sd-*.json' --exclude='*' "src/tokens/" "fe/${{ env.FE_
-          _DIR }}/"
+          rsync -av --delete --include='sd-*.json' --exclude='*' "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
 
       - name: Git author
         working-directory: fe
