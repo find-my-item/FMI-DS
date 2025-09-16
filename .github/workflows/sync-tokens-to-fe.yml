@@ -58,12 +58,12 @@ jobs:
 
       - name: Verify output
         run: |
-          if find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tw-*.json" \) | grep .; then
-            echo "Found token outputs (sd-*.json / tw-*.json):"
-            find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tw-*.json" \) -print
+          if find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tailwind.config.js" \) | grep .; then
+            echo "Found outputs (sd-*.json / tailwind.config.js):"
+            find src/tokens -maxdepth 5 \( -name "sd-*.json" -o -name "tailwind.config.js" \) -print
           else
             echo "skip_pr=true" >> $GITHUB_ENV
-            echo "::warning::No sd-*.json or tw-*.json under src/tokens; skipping PR."
+            echo "::warning::No sd-*.json or tailwind.config.js under src/tokens; skipping PR."
           fi
 
       - name: Checkout FE
@@ -79,9 +79,15 @@ jobs:
           rsync -avm --delete \
             --include='*/' \
             --include='**/sd-*.json' \
-            --include='**/tw-*.json' \
             --exclude='*' \
             "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
+          TW_PATH="$(find src/tokens -maxdepth 5 -name 'tailwind.config.js' | head -n1 || true)"
+          if [ -n "$TW_PATH" ]; then
+            cp -f "$TW_PATH" "fe/tailwind.config.js"
+            echo "Copied $TW_PATH -> fe/tailwind.config.js"
+          else
+            echo "No tailwind.config.js found under src/tokens"
+          fi
 
       - name: Open PR (let action commit & open)
         if: env.skip_pr != 'true'
@@ -100,5 +106,5 @@ jobs:
           signoff: true
           delete-branch: false
           add-paths: |
-            ${{ env.FE_TARGET_DIR }}/sd-*.json
-            ${{ env.FE_TARGET_DIR }}/tw-*.json
+            ${{ env.FE_TARGET_DIR }}/*.json
+            tailwind.config.js
