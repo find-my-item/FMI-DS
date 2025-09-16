@@ -16,7 +16,7 @@ permissions:
 env:
   NODE_VERSION: "20"
   FE_REPO: "find-my-item/FMI-FE" # ← 실제 owner/repo 로 교체
-  FE_TARGET_DIR: "dist/tokens/build" # ← FE에서 둘 위치
+  FE_TARGET_DIR: "src/tokens/build" # ← FE에서 둘 위치
   PR_BRANCH: "chore/update-design-tokens"
   COMMIT_MSG: "chore(tokens): sync from FMI-DS [skip ci]"
 
