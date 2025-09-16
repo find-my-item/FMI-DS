@@ -76,34 +76,13 @@ jobs:
       - name: Sync artifacts into FE
         run: |
           mkdir -p "fe/${{ env.FE_TARGET_DIR }}"
-          rsync -av --delete --include='sd-*.json' --exclude='*' "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
+          rsync -av --delete \
+            --include='*/' \
+            --include='**/sd-*.json' \
+            --exclude='*' \
+            "src/tokens/" "fe/${{ env.FE_TARGET_DIR }}/"
 
-      - name: Git author
-        working-directory: fe
-        run: |
-          git config user.email "bot@users.noreply.github.com"
-          git config user.name  "design-bot"
-
-      - name: Create branch
-        working-directory: fe
-        run: git checkout -B "${{ env.PR_BRANCH }}"
-
-      - name: Commit if changed
-        working-directory: fe
-        run: |
-          if git status --porcelain | grep .; then
-            git add -A
-            git commit -m "${{ env.COMMIT_MSG }}"
-          else
-            echo "skip_pr=true" >> $GITHUB_ENV
-          fi
-
-      - name: Push branch
-        if: env.skip_pr != 'true'
-        working-directory: fe
-        run: git push --set-upstream origin "${{ env.PR_BRANCH }}" --force-with-lease
-
-      - name: Open PR
+      - name: Open PR (let action commit & open)
         if: env.skip_pr != 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -116,5 +95,8 @@ jobs:
             자동 동기화 — FMI-DS → FMI-FE
             - Style Dictionary 산출물 업데이트
           labels: "design-tokens, automated"
+          commit-message: ${{ env.COMMIT_MSG }}
           signoff: true
           delete-branch: false
+          add-paths: |
+            ${{ env.FE_TARGET_DIR }}/sd-*.json
