@@ -1,8 +1,4 @@
 {
-  "Color": {
-    "$type": "color",
-    "$value": "#ffffff"
-  },
   "color": {
     "Cyan": {
       "0": {
@@ -750,5 +746,9 @@
       "$type": "number",
       "$value": 320
     }
+  },
+  "BaseColor": {
+    "$type": "color",
+    "$value": "#ffffff"
   }
 }
