@@ -1,0 +1,252 @@
+{
+  "Spacing": {
+    "Padding": {
+      "padding-400": {
+        "$type": "number",
+        "$value": "{Value.400}"
+      },
+      "padding-300": {
+        "$type": "number",
+        "$value": "{Value.300}"
+      },
+      "padding-200": {
+        "$type": "number",
+        "$value": "{Value.200}"
+      },
+      "padding-250": {
+        "$type": "number",
+        "$value": "{Value.250}"
+      },
+      "padding-350": {
+        "$type": "number",
+        "$value": "{Value.350}"
+      },
+      "padding-650": {
+        "$type": "number",
+        "$value": "{Value.650}"
+      },
+      "padding-150": {
+        "$type": "number",
+        "$value": "{Value.150}"
+      },
+      "padding-2000": {
+        "$type": "number",
+        "$value": "{Value.2000}"
+      },
+      "padding-450": {
+        "$type": "number",
+        "$value": "{Value.450}"
+      },
+      "padding-100": {
+        "$type": "number",
+        "$value": "{Value.100}"
+      },
+      "padding-1000": {
+        "$type": "number",
+        "$value": "{Value.1000}"
+      },
+      "padding-900": {
+        "$type": "number",
+        "$value": "{Value.900}"
+      },
+      "padding-800": {
+        "$type": "number",
+        "$value": "{Value.800}"
+      },
+      "padding-1600": {
+        "$type": "number",
+        "$value": "{Value.1600}"
+      },
+      "padding-500": {
+        "$type": "number",
+        "$value": "{Value.500}"
+      },
+      "padding-1200": {
+        "$type": "number",
+        "$value": "{Value.1200}"
+      },
+      "padding-750": {
+        "$type": "number",
+        "$value": "{Value.750}"
+      },
+      "padding-700": {
+        "$type": "number",
+        "$value": "{Value.700}"
+      },
+      "padding-600": {
+        "$type": "number",
+        "$value": "{Value.600}"
+      },
+      "padding-50": {
+        "$type": "number",
+        "$value": "{Value.50}"
+      }
+    },
+    "Gap": {
+      "gap-6000": {
+        "$type": "number",
+        "$value": "{Value.6000}"
+      },
+      "gap-4000": {
+        "$type": "number",
+        "$value": "{Value.4000}"
+      },
+      "gap-2400": {
+        "$type": "number",
+        "$value": "{Value.2400}"
+      },
+      "gap-1000": {
+        "$type": "number",
+        "$value": "{Value.1000}"
+      },
+      "gap-2500": {
+        "$type": "number",
+        "$value": "{Value.2500}"
+      },
+      "gap-800": {
+        "$type": "number",
+        "$value": "{Value.800}"
+      },
+      "gap-450": {
+        "$type": "number",
+        "$value": "{Value.450}"
+      },
+      "gap-350": {
+        "$type": "number",
+        "$value": "{Value.350}"
+      },
+      "gap-700": {
+        "$type": "number",
+        "$value": "{Value.700}"
+      },
+      "gap-400": {
+        "$type": "number",
+        "$value": "{Value.400}"
+      },
+      "gap-150": {
+        "$type": "number",
+        "$value": "{Value.150}"
+      },
+      "gap-900": {
+        "$type": "number",
+        "$value": "{Value.900}"
+      },
+      "gap-600": {
+        "$type": "number",
+        "$value": "{Value.600}"
+      },
+      "gap-1200": {
+        "$type": "number",
+        "$value": "{Value.1200}"
+      },
+      "gap-8000": {
+        "$type": "number",
+        "$value": "{Value.8000}"
+      },
+      "gap-1600": {
+        "$type": "number",
+        "$value": "{Value.1600}"
+      },
+      "gap-500": {
+        "$type": "number",
+        "$value": "{Value.500}"
+      },
+      "gap-2000": {
+        "$type": "number",
+        "$value": "{Value.2000}"
+      },
+      "gap-200": {
+        "$type": "number",
+        "$value": "{Value.200}"
+      },
+      "gap-50": {
+        "$type": "number",
+        "$value": "{Value.50}"
+      },
+      "gap-100": {
+        "$type": "number",
+        "$value": "{Value.100}"
+      },
+      "gap-3000": {
+        "$type": "number",
+        "$value": "{Value.3000}"
+      },
+      "gap-300": {
+        "$type": "number",
+        "$value": "{Value.300}"
+      }
+    }
+  },
+  "Font Size": {
+    "fontsize-900": {
+      "$type": "number",
+      "$value": "{Value.900}"
+    },
+    "fontsize-500": {
+      "$type": "number",
+      "$value": "{Value.500}"
+    },
+    "fontsize-600": {
+      "$type": "number",
+      "$value": "{Value.600}"
+    },
+    "fontsize-450": {
+      "$type": "number",
+      "$value": "{Value.450}"
+    },
+    "fontsize-400": {
+      "$type": "number",
+      "$value": "{Value.400}"
+    },
+    "fontsize-1000": {
+      "$type": "number",
+      "$value": "{Value.1000}"
+    },
+    "fontsize-300": {
+      "$type": "number",
+      "$value": "{Value.300}"
+    },
+    "fontsize-700": {
+      "$type": "number",
+      "$value": "{Value.700}"
+    },
+    "fontsize-350": {
+      "$type": "number",
+      "$value": "{Value.350}"
+    },
+    "fontsize-250": {
+      "$type": "number",
+      "$value": "{Value.250}"
+    },
+    "fontsize-1400": {
+      "$type": "number",
+      "$value": "{Value.1400}"
+    },
+    "fontsize-800": {
+      "$type": "number",
+      "$value": "{Value.800}"
+    }
+  },
+  "Radius": {
+    "radius-500": {
+      "$type": "number",
+      "$value": "{Value.500}"
+    },
+    "radius-300": {
+      "$type": "number",
+      "$value": "{Value.300}"
+    },
+    "radius-2500": {
+      "$type": "number",
+      "$value": "{Value.2500}"
+    },
+    "radius-200": {
+      "$type": "number",
+      "$value": "{Value.200}"
+    },
+    "--c-radius-100": {
+      "$type": "number",
+      "$value": "{Value.100}"
+    }
+  }
+}

@@ -1,0 +1,500 @@
+{
+  "[Fill]": {
+    "Neutral": {
+      "Strong !!!": {
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.50}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.100}"
+        }
+      },
+      "Normal": {
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.50}"
+        }
+      }
+    },
+    "Brand": {
+      "Subtle": {
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.12}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.25}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.25}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Blue.12}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Blue.25}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.50}"
+        }
+      },
+      "Normal": {
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.700}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.600}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Blue.400}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.300}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.600}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Blue.50}"
+        }
+      }
+    },
+    "Layout -": {
+      "Disabled": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.100}"
+      },
+      "Pressed": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.50}"
+      },
+      "Entered (+Selected)": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.0}"
+      },
+      "Focused": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.0}"
+      },
+      "Hover": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.25}"
+      },
+      "Default": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.0}"
+      }
+    },
+    "Neutral-Inversed": {
+      "Normal": {
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.700}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.100}"
+        },
+        "Preesed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.50}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.100}"
+        }
+      }
+    }
+  },
+  "[Fg]": {
+    "Layout": {
+      "Body": {
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.500}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.500}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.700}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        }
+      },
+      "Header": {
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.800}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.800}"
+        }
+      }
+    },
+    "Neutral-Inversed": {
+      "Normal": {
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.0}"
+        }
+      },
+      "Strong": {
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.25}"
+        }
+      }
+    },
+    "Neutral": {
+      "Normal": {
+        "Placeholder": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Preesed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        }
+      },
+      "Strong": {
+        "Preesed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.600}"
+        },
+        "Placeholder": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.300}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.1000}"
+        }
+      }
+    },
+    "Brand": {
+      "Subtle": {
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.500}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Blue.500}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.700}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.700}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        }
+      },
+      "Normal": {
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.0}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.0}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.0}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Green.500}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        }
+      }
+    }
+  },
+  "[Border]": {
+    "Neutral": {
+      "Normal": {
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.300}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.400}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.300}"
+        },
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        }
+      },
+      "Strong !!!": {
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Flat-Gray.200}"
+        }
+      }
+    },
+    "Divider": {
+      "Default": {
+        "$type": "color",
+        "$value": "{color.Flat-Gray.100}"
+      }
+    },
+    "Brand": {
+      "Subtle": {
+        "Pressed": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        },
+        "Hover": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        },
+        "Focused": {
+          "$type": "color",
+          "$value": "{color.Blue.75}"
+        },
+        "Default": {
+          "$type": "color",
+          "$value": "{color.Blue.50}"
+        },
+        "Disabled": {
+          "$type": "color",
+          "$value": "{color.Blue.50}"
+        },
+        "Entered (+Selected)": {
+          "$type": "color",
+          "$value": "{color.Blue.100}"
+        }
+      }
+    }
+  },
+  "[Bg]": {
+    "LNB": {
+      "$type": "color",
+      "$value": "{color.Blue.950}"
+    },
+    "None": {
+      "400": {
+        "$type": "color",
+        "$value": "{color.Navy.400}"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "{color.Navy.500}"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "{color.Navy.600}"
+      }
+    },
+    "Navigation": {
+      "$type": "color",
+      "$value": "{color.Gray.0}"
+    },
+    "Content": {
+      "$type": "color",
+      "$value": "{color.Gray.0}"
+    }
+  },
+  "System": {
+    "Success": {
+      "$type": "color",
+      "$value": "{color.Green.500}"
+    },
+    "Warning": {
+      "$type": "color",
+      "$value": "{color.Red.600}"
+    }
+  }
+}

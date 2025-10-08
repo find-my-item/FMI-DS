@@ -8,6 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:tokens": "npm run split:tokens && npm run build:tokens:tailwind",
     "split:tokens": "node src/tokens/split-tokens.js",
+    "build:sdtokens": "node src/tokens/sd-tokens-config.js",
+    "build:twtokens": "node src/tokens/tw-tokens-config.js",
     "build:tokens:tailwind": "node src/tokens/sd-tokens-config.js && node src/tokens/tw-tokens-config.js"
   },
   "repository": {
